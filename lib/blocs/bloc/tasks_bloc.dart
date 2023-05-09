@@ -1,11 +1,9 @@
 import 'package:bloc_task_planner_demo/blocs/bloc/tasks_event.dart';
 import 'package:bloc_task_planner_demo/blocs/bloc/tasks_state.dart';
 import 'package:bloc_task_planner_demo/models/task.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 
-import '../bloc_exports.dart';
-
-class TasksBloc extends Bloc<TasksEvent, TasksState> {
+class TasksBloc extends HydratedBloc<TasksEvent, TasksState> {
   TasksBloc() : super(const TasksState()) {
     on<AddTask>(_onAddTask);
     on<UpdateTask>(_onUpdateTask);
